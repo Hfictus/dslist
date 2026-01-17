@@ -4,13 +4,13 @@
 
 # Sobre o projeto:
 
-DSList é uma aplicação web Back-end construída no evento Intensivão Java Spring, organizado pela DevSuperior em novembro de 2024.
+DSList é uma aplicação web Backend construída no evento Intensivão Java Spring, organizado pela DevSuperior em novembro de 2024.
 
-No evento, abordou-se em linhas gerais relações entre Back-end e Front-end num contexto de aplicações web, considerando-se conceitos e tecnologias. 
+No evento, abordou-se em linhas gerais relações entre Backend e Frontend num contexto de aplicações web, considerando-se conceitos e tecnologias. 
 
 Apresentou-se três perfis básicos de desenvolvimento: testes, com H2; homologação, com PostgreSQL e aplicação de cliente opcional (como PgAdmin); e, produção, implantação em nuvem com Railway.
 
-E apesar de não ter sido construído o Front-end, abaixo são mostradas imagens de como o DSList poderia ser desenvolvido, considerando-se o sistema no Back-end.
+E apesar de não ter sido construído o Frontend, abaixo são mostradas imagens de como o DSList poderia ser desenvolvido, considerando-se o sistema no Backend.
 
 ## Layout web:
 
@@ -51,7 +51,7 @@ Docker
 
 ## Como executar o projeto:
 
-Para a execução do projeto Back-end para fins de testes, recomenda-se clonar o repositório ou fazer o download zip (descompactando-o); importar o projeto para a IDE; baixar PostgreSQL e PgAdmin ou DBeaver, ou criar uma rede de containers com docker-compose; e usar o Postman para simular requisições (pode ser necessário criar conta antes).
+Para a execução do projeto Backend para fins de testes, recomenda-se clonar o repositório ou fazer o download zip (descompactando-o); importar o projeto para a IDE; baixar PostgreSQL e PgAdmin ou DBeaver, ou criar uma rede de containers com docker-compose; e usar o Postman para simular requisições (pode ser necessário criar conta antes).
 
 ## Autor:
 
