@@ -32,7 +32,8 @@ Clicando-se sobre um dos jogos, pode-se ver detalhes sobre ele:
 
 ## Modelo conceitual:
 
-![domineModel](https://github.com/Hfictus/images/blob/main/DomineModelDSListApp.webp)
+![domineModel]( https://github.com/Hfictus/images/blob/main/ModelDomainDSList.webp
+)
 
 ## Algumas tecnologias utilizadas:
 Java
