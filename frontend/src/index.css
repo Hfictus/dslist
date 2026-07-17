@@ -1,0 +1,30 @@
+
+
+
+:root {
+  --bg-color: #111622;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --accent-blue: #00bcd4;
+  --body-bg: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text-dark);
+}
+
+/* Utilitários Mobile First */
+.container {
+  width: 100%;
+  padding: 16px;
+  max-width: 768px; /* Restringe tamanho ideal para portfólio web */
+  margin: 0 auto;
+}
