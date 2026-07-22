@@ -1,0 +1,44 @@
+import { Link } from 'react-router-dom';
+import img from '../assets/start-page-img.png';
+
+
+export function Home() {
+  return (
+    <div className="min-h-screen bg-[#060b18] text-white flex flex-col justify-between">
+      <main className="max-w-6xl mx-auto px-6 py-16 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="max-w-xl">
+          <span className="text-cyan-400 font-bold text-sm tracking-wider uppercase">DSList PRO</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold mt-2 mb-6 leading-tight">
+            Suas coleções do jeito certo
+          </h1>
+          <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+            Organize sua coleção de games de um jeito prático e divertido. Na verdade você vai aprender a criar este aplicativo e elevar seus conhecimentos para o próximo nível :)
+          </p>
+          <Link 
+            to="/lists" 
+            className="inline-block bg-cyan-400 text-black font-bold px-10 py-3 rounded-md hover:bg-cyan-300 transition-colors shadow-lg"
+          >
+            Iniciar
+          </Link>
+        </div>
+
+        {/* imagem ilustrativa */}
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          <img 
+            src={img} 
+            alt="Ilustração DSList" 
+            className="max-w-full h-auto object-contain"
+            onError={(e) => {
+              // Fallback visual caso ainda não haja um link de imagem válido
+              (e.currentTarget as HTMLElement).style.display = 'none';
+            }}
+          />
+          {/* Caixa indicativa temporária */}
+          <div className="border-2 border-dashed border-slate-600 rounded-lg p-12 text-center text-slate-400 w-full max-w-md">
+             Cole o link da sua imagem na tag &lt;img&gt; acima
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
