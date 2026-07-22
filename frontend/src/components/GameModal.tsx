@@ -14,11 +14,11 @@ export function GameModal({ game, onClose }: GameModalProps) {
       {/* O e.stopPropagation impede que o clique dentro do card feche o modal */}
       <div 
         onClick={(e) => e.stopPropagation()}
-        className="bg-white rounded-lg p-6 max-w-xl w-full shadow-2xl relative border border-slate-200"
+        className="bg-white rounded-lg p-4 sm:p-6 max-w-xl w-full shadow-2xl relative border border-slate-200 max-h-[90dvh] overflow-y-auto"
       >
         <button 
           onClick={onClose}
-          className="absolute top-3 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold"
+          className="absolute top-3 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold z-10"
         >
           ✕
         </button>
@@ -27,7 +27,7 @@ export function GameModal({ game, onClose }: GameModalProps) {
           <img 
             src={game.imgUrl} 
             alt={game.title} 
-            className="w-full sm:w-44 h-56 object-cover rounded-md shadow-sm"
+            className="w-full sm:w-44 h-48 sm:h-56 object-cover rounded-md shadow-sm"
           />
           <div className="flex flex-col justify-between">
             <div>

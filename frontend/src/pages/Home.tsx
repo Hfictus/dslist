@@ -5,7 +5,7 @@ import img from '../assets/start-page-img.png';
 export function Home() {
   return (
     <div className="min-h-screen bg-[#060b18] text-white flex flex-col justify-between">
-      <main className="max-w-6xl mx-auto px-6 py-16 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
+      <main className="max-w-6xl mx-auto px-6 py-16 flex-1 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="max-w-xl">
           <span className="text-cyan-400 font-bold text-sm tracking-wider uppercase">DSList PRO</span>
           <h1 className="text-4xl md:text-5xl font-extrabold mt-2 mb-6 leading-tight">
@@ -23,7 +23,7 @@ export function Home() {
         </div>
 
         {/* imagem ilustrativa */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
+        <div className="w-full max-w-md lg:w-1/2 flex justify-center items-center">
           <img 
             src={img} 
             alt="Ilustração DSList" 
@@ -33,10 +33,7 @@ export function Home() {
               (e.currentTarget as HTMLElement).style.display = 'none';
             }}
           />
-          {/* Caixa indicativa temporária */}
-          <div className="border-2 border-dashed border-slate-600 rounded-lg p-12 text-center text-slate-400 w-full max-w-md">
-             Cole o link da sua imagem na tag &lt;img&gt; acima
-          </div>
+          
         </div>
       </main>
     </div>
