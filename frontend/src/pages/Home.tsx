@@ -5,7 +5,7 @@ import img from '../assets/start-page-img.png';
 export function Home() {
   return (
     <div className="min-h-screen bg-[#060b18] text-white flex flex-col justify-between">
-      <main className="max-w-6xl mx-auto px-6 py-16 flex-1 flex flex-col lg:flex-row items-center justify-between gap-12">
+      <main className="max-w-6xl mx-auto px-6 pt-16 pb-[5px] min-[1200px]:pb-0 flex-1 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="max-w-xl">
           <span className="text-cyan-400 font-bold text-sm tracking-wider uppercase">DSList PRO</span>
           <h1 className="text-4xl md:text-5xl font-extrabold mt-2 mb-6 leading-tight">
@@ -16,7 +16,7 @@ export function Home() {
           </p>
           <Link 
             to="/lists" 
-            className="inline-block bg-cyan-400 text-black font-bold px-10 py-3 rounded-md hover:bg-cyan-300 transition-colors shadow-lg"
+            className="block w-full text-center bg-cyan-400 text-black font-bold py-3 rounded-md hover:bg-cyan-300 transition-colors shadow-lg"
           >
             Iniciar
           </Link>
