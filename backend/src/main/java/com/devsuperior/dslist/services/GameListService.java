@@ -29,7 +29,11 @@ public class GameListService {
 		return result.stream().map(x -> new GameListDTO(x)).toList();
 	}
 	
-	
+	/** Trocar um jogo de lugar, atualizando a posição dos demais na lista:
+	 * Reordena a lista de jogos deslocando os elementos.
+	 * Remove o jogo da posição de origem e o insere na posição de destino,
+	 * atualizando a posição de todos os jogos intermediários no banco de dados.
+	 * */
 	@Transactional
 	public void move(Long listId, int sourceIndex, int destinationIndex) {
 		List<GameMinProjection> list = gameRepository.searchByList(listId);
@@ -45,6 +49,24 @@ public class GameListService {
 		}
 	}
 	
+
+/* Troca dois jogos de lugar, sem atualizar a posição dos demais da lista:
+ * Realiza a troca direta de posições entre dois jogos da lista.
+ * Inverte apenas os valores de posição do jogo de origem e do jogo de destino no banco de dados,
+ * mantendo inalterada a ordem de todos os outros jogos.
+	@Transactional
+	public void move(Long listId, int sourceIndex, int destinationIndex) {
+		List<GameMinProjection> list = gameRepository.searchByList(listId);
+		
+		// Pega os dois objetos diretamente pelos seus índices
+		GameMinProjection sourceObj = list.get(sourceIndex);
+		GameMinProjection destObj = list.get(destinationIndex);
+		
+		// Inverte as posições apenas desses dois jogos no banco de dados
+		gameListRepository.updateBelongingPosition(listId, sourceObj.getId(), destinationIndex);
+		gameListRepository.updateBelongingPosition(listId, destObj.getId(), sourceIndex);
+	}
+*/
 	
 }
 

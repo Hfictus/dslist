@@ -11,8 +11,11 @@ export function Header({ showListingsLink = false }: HeaderProps) {
         DSList
       </Link>
       {showListingsLink && (
-        <Link to="/lists" className="text-sm font-semibold hover:underline text-slate-200">
-          Listas
+        <Link
+          to="/lists"
+          className="text-sm font-semibold no-underline hover:no-underline text-slate-200"
+        >
+          Lists
         </Link>
       )}
     </header>

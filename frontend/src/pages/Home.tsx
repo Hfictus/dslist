@@ -12,7 +12,7 @@ export function Home() {
             Suas coleções do jeito certo
           </h1>
           <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-            Organize sua coleção de games de um jeito prático e divertido. Na verdade você vai aprender a criar este aplicativo e elevar seus conhecimentos para o próximo nível :)
+            Organize sua coleção de games de um jeito prático e divertido. Na verdade você vai aprender a criar este aplicativo e elevar seus conhecimentos para o próximo nível.
           </p>
           <Link 
             to="/lists" 
