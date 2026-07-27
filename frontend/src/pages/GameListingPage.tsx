@@ -35,19 +35,19 @@ export function GameListingPage() {
     if (draggedIndex === null || draggedIndex === index) return;
   };
 
-  /** Clicar sobre um jogo e arrastar para mudar posição, rearranjar os outros jogos na lista:
+  /**
    * Manipula o evento de soltar (drop) de um card em uma nova posição da lista.
    * Remove o jogo arrastado de sua posição original e o insere no índice de destino,
    * deslocando os elementos intermediários na tela e notificando o servidor.
-  */
+   */
   const handleDrop = (destinationIndex: number) => {
     if (draggedIndex === null || draggedIndex === destinationIndex) return;
 
     const updatedGames = [...games];
-    // Troca direta das duas posições (Swap)
-    const temp = updatedGames[draggedIndex];
-    updatedGames[draggedIndex] = updatedGames[destinationIndex];
-    updatedGames[destinationIndex] = temp;
+
+    // Reordenação por deslocamento (Shift/Splice)
+    const [movedGame] = updatedGames.splice(draggedIndex, 1);
+    updatedGames.splice(destinationIndex, 0, movedGame);
 
     setGames(updatedGames);
 
@@ -61,35 +61,6 @@ export function GameListingPage() {
 
     setDraggedIndex(null);
   };
-
-
-/** Trocar dois jogos de posição, sem alterar posição dos demais (Troca Direta / Swap): 
- * Manipula o evento de soltar (drop) de um card em uma nova posição da lista.
- * Executa uma troca direta (swap) entre o jogo de origem e o de destino no estado do React,
- * preservando a ordem dos demais jogos e enviando a alteração para a API.
-const handleDrop = (destinationIndex: number) => {
-    if (draggedIndex === null || draggedIndex === destinationIndex) return;
-
-    // 1. Cria cópia da lista e realiza a troca direta (Swap)
-    const updatedGames = [...games];
-    const temp = updatedGames[draggedIndex];
-    updatedGames[draggedIndex] = updatedGames[destinationIndex];
-    updatedGames[destinationIndex] = temp;
-
-    // 2. Atualiza a tela imediatamente
-    setGames(updatedGames);
-
-    // 3. Envia os índices para o Back-end persistir a troca direta
-    api.post(`/lists/${listId}/replacement`, {
-      sourceIndex: draggedIndex,
-      destinationIndex: destinationIndex
-    }).catch((err) => {
-      console.error("Erro ao salvar ordem no servidor", err);
-    });
-
-    setDraggedIndex(null);
-  };
-*/
 
   return (
     <div className="min-h-screen bg-[#cdd5e0]">
@@ -115,9 +86,9 @@ const handleDrop = (destinationIndex: number) => {
 
       {/* Modal centralizado com fundo transparente */}
       {selectedGame && (
-        <GameModal 
-          game={selectedGame} 
-          onClose={() => setSelectedGame(null)} 
+        <GameModal
+          game={selectedGame}
+          onClose={() => setSelectedGame(null)}
         />
       )}
     </div>
