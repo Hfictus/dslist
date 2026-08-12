@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import img from '../assets/start-page-img.png';
+import img from '../assets/start-page-img.webp';
 
 
 export function Home() {

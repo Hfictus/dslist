@@ -10,7 +10,7 @@ No evento de 2024, abordou-se em linhas gerais relações entre Back-end e Front
 
 Apresentou-se três perfis básicos de desenvolvimento: testes, com H2; homologação local, com PostgreSQL e aplicação de cliente opcional (como PgAdmin); e, produção, implantação em nuvem com Railway.
 E apesar de não ter sido construído o Front-end, foram mostradas imagens de como o DSList poderia ser implementado em página web, considerando-se o sistema no Back-end.
-No DSList-Monorepo, busca-se implementação do Front-end a partir de Mobile First.
+No DSList-Monorepo, busca-se implementação do Front-end a partir de Mobile First, sendo feitas modificações no código e no layout.
 
 ## Stack
 ### Back-end
@@ -18,8 +18,9 @@ No DSList-Monorepo, busca-se implementação do Front-end a partir de Mobile Fir
 * Spring Boot
 
 ### Front-end
-* React + Vite <br>
-* TypeScript<br>
+* React + Vite
+* TypeScript
+* Tailwind
 
 ### Banco de dados & infraestrutura
 * H2 (test)
