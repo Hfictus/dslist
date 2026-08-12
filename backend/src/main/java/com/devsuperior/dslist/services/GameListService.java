@@ -21,15 +21,17 @@ public class GameListService {
 	@Autowired
 	private GameRepository gameRepository;
 	
-	
-	
 	@Transactional(readOnly = true)
 	public List<GameListDTO> findAll() {
 		List<GameList> result = gameListRepository.findAll();
 		return result.stream().map(x -> new GameListDTO(x)).toList();
 	}
 	
-	
+	/**
+	 * Reordena a lista de jogos deslocando os elementos.
+	 * Remove o jogo da posição de origem e o insere na posição de destino,
+	 * atualizando a posição de todos os jogos intermediários no banco de dados.
+	 */
 	@Transactional
 	public void move(Long listId, int sourceIndex, int destinationIndex) {
 		List<GameMinProjection> list = gameRepository.searchByList(listId);
@@ -37,14 +39,11 @@ public class GameListService {
 		GameMinProjection obj = list.remove(sourceIndex);
 		list.add(destinationIndex, obj);
 		
-		int min = (sourceIndex < destinationIndex)?sourceIndex:destinationIndex;
-		int max = (sourceIndex < destinationIndex)?destinationIndex:sourceIndex;
+		int min = (sourceIndex < destinationIndex) ? sourceIndex : destinationIndex;
+		int max = (sourceIndex < destinationIndex) ? destinationIndex : sourceIndex;
 		
-		for(int i = min; i <= max; i++) {
+		for (int i = min; i <= max; i++) {
 			gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
 		}
 	}
-	
-	
 }
-

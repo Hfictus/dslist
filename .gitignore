@@ -37,5 +37,7 @@ build/
 .mvn
 mvnw
 .mvnw.cmd
-create.sql
-railway.txt
+
+# Em produção, arquivos de script SQL locais devem ser ignorados.
+# Mantido comentado aqui para fins de demonstração em portfólio:
+#create.sql

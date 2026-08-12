@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dslist-postgres
+    environment:
+      POSTGRES_DB: dslist
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234567
+    ports:
+      - "5433:5432"
+    volumes:
+      - dslist-postgres-data:/var/lib/postgresql/data
+    networks:
+      - dslist-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dslist"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: dslist-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@dslist.com
+      PGADMIN_DEFAULT_PASSWORD: pgadmin123
+    ports:
+      - "5051:80"
+    volumes:
+      - dslist-pgadmin-data:/var/lib/pgadmin
+    networks:
+      - dslist-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  dslist-postgres-data:
+  dslist-pgadmin-data:
+
+networks:
+  dslist-network:
+    driver: bridge
