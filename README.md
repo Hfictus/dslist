@@ -52,15 +52,10 @@ No projeto, implementa-se uma lógica que permite trocar os jogos de posição a
 Na imagem acima, trocou-se de lugar o jogo Sonic CD, que estava na última posição da lista, não visível nas imagens neste README. Clicando-se sobre Sonic CD e se arrastando esse card sobre o do jogo do Super Mário World, este e todos os demais se movem uma posição abaixo (Se fosse o contrário, todos se moveriam para cima uma posição).
 
 Clicando-se sobre um dos jogos, pode-se ver detalhes sobre ele:
-![Web 4]( https://github.com/Hfictus/images/blob/main/exampleGameDSListApp.webp)
 <img width="100%" alt="" src="./docs/assets/img/sonic-cd.webp" />
 
 ## Modelo conceitual (Back-end):
-![domineModel]( https://github.com/Hfictus/images/blob/main/ModelDomainDSList.webp
-)
 <img width="100%" alt="" src="./docs/assets/img/model.webp" />
-
-
 
 ## Como executar o projeto
 ### backend:
