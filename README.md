@@ -6,11 +6,11 @@
 
 DSList-Monorepo é uma aplicação web Full-Stack construída a partir de projeto de Back-end, dsllist, anteriormente criado no evento Intensivão Java Spring, organizado pela DevSuperior em novembro de 2024. O DSList-Monorepo é um exercício de criação do projeto de Front-end e integração entre ele e o de Back-end em 2026.
 
-No evento de 2024, abordou-se em linhas gerais relações entre Back-end e Front-end num contexto de aplicações web, considerando-se conceitos e tecnologias. 
+No evento de 2024, abordou-se, em linhas gerais, relações entre Back-end e Front-end num contexto de aplicações web, considerando-se conceitos e tecnologias. 
 
 Apresentou-se três perfis básicos de desenvolvimento: testes, com H2; homologação local, com PostgreSQL e aplicação de cliente opcional (como PgAdmin); e, produção, implantação em nuvem com Railway.
 E apesar de não ter sido construído o Front-end, foram mostradas imagens de como o DSList poderia ser implementado em página web, considerando-se o sistema no Back-end.
-No DSList-Monorepo, busca-se implementação do Front-end a partir de Mobile First, sendo feitas modificações no código e no layout.
+No DSList-Monorepo, busca-se implementação do Front-end a partir de Mobile First, sendo feitas modificações no código e no layout. Também foram feitas modificações como as extensões dos arquivos de imagem (.webp -> .webp), sendo modificadas as URLs no iimport.sql no Back-end.
 
 ## Stack
 ### Back-end
@@ -29,37 +29,48 @@ No DSList-Monorepo, busca-se implementação do Front-end a partir de Mobile Fir
 * Node.js + Yarn (ambiente de desenvolvimento)
 
 ## Layout Mobile:
-a ser feito
+320px:<br>
+<img width="100%" alt="" src="./docs/assets/img/mobile320p.png" />
+<br>
+
+576px:<br>
+<img width="100%" alt="" src="./docs/assets/img/mobile576px.webp" />
+
 
 ## Layout web:
+1200px ou maiores:<br>
 
 A página inicial da aplicação permite acessar um conjunto de listas de jogos:
-![Web 1]( https://github.com/Hfictus/images/blob/main/initialPageDSListApp.webp)
+<img width="100%" alt="" src="./docs/assets/img/web-start-page.webp" />
 
 Clicando-se em Iniciar, acessa-se a página de menu de coleções de jogos:
-![Web 2]( https://github.com/Hfictus/images/blob/main/collectionsPageDSListApp.webp)
+<img width="100%" alt="" src="./docs/assets/img/game-lists-page.webp" />
 
 Clicando-se sobre uma das listas, pode-se acessá-la:
-
-![Web 3]( https://github.com/Hfictus/images/blob/main/gameListPageDSListApp.webp)
-
-No projeto, implementa-se uma lógica que permite trocar os jogos de posição ao se clicar sobre um deles e arrastar sobre a posição de outro.
+<img width="100%" alt="" src="./docs/assets/img/game-list.webp" />
+No projeto, implementa-se uma lógica que permite trocar os jogos de posição ao se clicar sobre um deles e arrastar sobre a posição de outro.<br>
+Na imagem acima, trocou-se de lugar o jogo Sonic CD, que estava na última posição da lista, não visível nas imagens neste README. Clicando-se sobre Sonic CD e se arrastando esse card sobre o do jogo do Super Mário World, este e todos os demais se movem uma posição abaixo (Se fosse o contrário, todos se moveriam para cima uma posição).
 
 Clicando-se sobre um dos jogos, pode-se ver detalhes sobre ele:
-
-![Web 4]( https://github.com/Hfictus/images/blob/main/exampleGameDSListApp.webp)
+<img width="100%" alt="" src="./docs/assets/img/sonic-cd.webp" />
 
 ## Modelo conceitual (Back-end):
-
-![domineModel]( https://github.com/Hfictus/images/blob/main/ModelDomainDSList.webp
-)
+<img width="100%" alt="" src="./docs/assets/img/model.webp" />
 
 
-## Como executar o projeto backend:
+
+## Como executar o projeto
+### backend:
 
 Para a execução do projeto backend para fins de testes, recomenda-se clonar o repositório ou fazer o download zip (descompactando-o); importar o projeto para a IDE; baixar PostgreSQL e PgAdmin ou DBeaver, ou criar uma rede de containers com docker-compose; e usar o Postman para simular requisições (pode ser necessário criar conta antes).
 
+### frontend:
+Para a execução do projeto frontend para fins de testes, recomenda-se clonar o repositório ou fazer o download zip (descompactando-o); abrir o terminal na pasta do projeto e executar o comando "yarn" para fazer as importações de dependências, executar o comando "yarn dev" para rodar a aplicação, e acessar localhost:5173 no navegador.
+
+Observações: detalhes sobre testes locais com projeto de Back-end e Front-end, bem como sobre exemplos de implantação em nuvem podem ser encontrados no repositório DSMovie-Monorepo.
+
 ## Autor:
+Antes de executar, baixar as dependências.
 
 Gerson Klauck (Hfictus)
 
